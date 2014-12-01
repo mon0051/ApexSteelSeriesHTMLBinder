@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 
+  mapped_action: MyText
+
+two:
+  code: 
+  mapped_action: MyText
