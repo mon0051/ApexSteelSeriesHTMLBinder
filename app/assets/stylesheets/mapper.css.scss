@@ -1,0 +1,37 @@
+// Place all the styles related to the mapper controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$key_size: 4.5rem;
+$key_font_size:1.5rem;
+$keyboard_wrapper_background:#1e1e1e;
+$keyboard_background:#232323;
+$key_background:#2e2e2e;
+.key{
+  border: solid 0.1rem #555;
+  border-radius: 0.3rem;
+  display: block;
+  position: absolute;
+  height:$key_size;
+  width: $key_size;
+  background-color:$key_background;
+}
+.key-text{
+  text-align: center;
+  font-size: $key_font_size;
+  padding-top: $key_size / 2.0 - $key_font_size / 2.0;
+}
+.head_part{
+  position: relative;
+}
+.keyboard_wrapper{
+  padding-top:1px;
+  padding-bottom:1px;
+  background:$keyboard_wrapper_background;
+}
+.keyboard{
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  margin:2rem;
+  position: relative;
+  background:$keyboard_background;
+  height:400px;
+}
