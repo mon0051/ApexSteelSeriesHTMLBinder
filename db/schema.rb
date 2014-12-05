@@ -11,47 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201040729) do
+ActiveRecord::Schema.define(version: 20141205111215) do
 
-	create_table "key_groups", force: true do |t|
-		t.text "name"
-		t.text "color1"
-		t.text "color2"
-		t.text "color3"
-		t.text "color4"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-	end
+  create_table "key_groups", force: true do |t|
+    t.text     "name"
+    t.text     "color1"
+    t.text     "color2"
+    t.text     "color3"
+    t.text     "color4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-	create_table "keyblocks", force: true do |t|
-		t.text "name"
-		t.integer "x_offser"
-		t.integer "y_offset"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-		t.integer "x_offset"
-	end
+  create_table "keyblocks", force: true do |t|
+    t.text     "name"
+    t.integer  "x_offser"
+    t.integer  "y_offset"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "x_offset"
+  end
 
-	create_table "keycodes", force: true do |t|
-		t.integer "code"
-		t.text "mapped_action"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-	end
+  create_table "keycodes", force: true do |t|
+    t.integer  "code"
+    t.text     "mapped_action"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-	create_table "keys", force: true do |t|
-		t.text "scancode"
-		t.text "name"
-		t.integer "keygroup_id"
-		t.integer "keycode1"
-		t.integer "keycode2"
-		t.integer "keycode3"
-		t.integer "keycode4"
-		t.datetime "created_at"
-		t.datetime "updated_at"
-		t.integer "x_pos"
-		t.integer "y_pos"
-		t.integer "keyblock_id"
-	end
+  create_table "keys", force: true do |t|
+    t.text     "scancode"
+    t.text     "name"
+    t.integer  "keygroup_id"
+    t.integer  "keycode1"
+    t.integer  "keycode2"
+    t.integer  "keycode3"
+    t.integer  "keycode4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "x_pos"
+    t.integer  "y_pos"
+    t.integer  "keyblock_id"
+    t.text     "eclass"
+  end
 
 end

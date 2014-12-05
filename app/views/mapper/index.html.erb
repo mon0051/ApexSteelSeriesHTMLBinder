@@ -8,7 +8,7 @@
 <div class="keyboard_wrapper">
   <div class="keyboard">
     <% @keys.each do |key| %>
-        <div class="key" id="<%= key.name %>" style="color: <%= key.key_group.color1 %> ; top:<%= key.y_pos %>px;left: <%= key.x_pos %>px;">
+        <div class="key <%= key.eclass %> " id="<%= key.name %>" style="color: <%= key.key_group.color1 %> ; top:<%= key.y_pos %>px;left: <%= key.x_pos %>px;">
           <div class="key-text">
             <%= key.name %>
           </div>

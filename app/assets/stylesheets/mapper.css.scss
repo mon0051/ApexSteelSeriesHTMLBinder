@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $key_size: 4.5rem;
+
 $key_font_size:1.5rem;
 $keyboard_wrapper_background:#1e1e1e;
 $keyboard_background:#232323;
 $key_background:#2e2e2e;
+
 .key{
   border: solid 0.1rem #555;
   border-radius: 0.3rem;
@@ -34,4 +36,42 @@ $key_background:#2e2e2e;
   position: relative;
   background:$keyboard_background;
   height:400px;
+}
+
+$tab_size: 7rem;
+$caps_size: 8.5rem;
+$return_size:10.5rem;
+$left_shift_size:10.5rem;
+$ctrl_size:6.95rem;
+
+.Tab,.BSlash{
+  width:$tab_size;
+}
+.Caps{
+  width: $caps_size;
+}
+.Return{
+  width: $return_size;
+}
+.LShift{
+  width:$left_shift_size;
+}
+.Ctrl{
+  width: 6rem;
+}
+.Win,.Alt,.Apex{
+   width: $ctrl_size;
+ }
+.Space {
+  width:26.5rem;
+  height:9rem;
+}
+.Space .key-text {
+  color:rgba(0,0,0,0);
+}
+.Backspace {
+  width:9.5rem;
+}
+.RShift {
+  width:13.5rem;
 }
