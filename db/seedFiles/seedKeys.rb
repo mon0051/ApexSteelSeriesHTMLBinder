@@ -9,7 +9,6 @@
 #   A standard key has a width and height of 10 * sf (Scale Factor)
 #############################################################################
 # MX Keys
-
 Key.create({name: 'MX1' , scancode: '700e8', keygroup_id: $kg[:left].id, keycode1: $kc[:k179].id, x_pos: 0 * $sf , y_pos: 0*$sf , keyblock_id: $kb[:MXKeys].id})
 Key.create({name: 'MX2' , scancode: '700e9', keygroup_id: $kg[:left].id, keycode1: $kc[:k180].id, x_pos: 10*$sf  , y_pos: 0*$sf , keyblock_id: $kb[:MXKeys].id})
 Key.create({name: 'MX3' , scancode: '700ea', keygroup_id: $kg[:left].id, keycode1: $kc[:k181].id, x_pos: 0*$sf   , y_pos: 10*$sf, keyblock_id: $kb[:MXKeys].id})
@@ -164,4 +163,3 @@ Key.create({name: 'F9'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1
 Key.create({name: 'F10' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 10*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
 Key.create({name: 'F11' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 20*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
 Key.create({name: 'F12' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 30*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
-
