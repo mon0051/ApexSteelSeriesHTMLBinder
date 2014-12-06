@@ -1,8 +1,9 @@
+require_relative 'seed_globals'
 #############################################################################
 # Keyblocks
 #   A grouping of keys by block, to allow easier formatting
 #############################################################################
-$kb = {}
+
 $kb[:LKeys]      = Keyblock.create({name:'LKeys'          ,x_offset: 0     * $sf, y_offset: 0    * $sf})
 $kb[:MXKeys]     = Keyblock.create({name:'MXKeys'         ,x_offset: 0     * $sf, y_offset: 22.5 * $sf})
 $kb[:MKeys1]     = Keyblock.create({name:'MKeys1'         ,x_offset: 42.5  * $sf, y_offset: 0    * $sf})

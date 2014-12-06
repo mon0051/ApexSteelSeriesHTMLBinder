@@ -1,10 +1,5 @@
-#############################################################################
-# Scale factor determines how the keyboard layout appears, it's best not
-#   to alter this value here for display reasons, that should be done in
-#   the sass or controller
-#############################################################################
-scale_factor = 5.0
-$sf = scale_factor
+require_relative 'seedFiles/seed_globals'
+
 
 #############################################################################
 # Colors
@@ -21,8 +16,8 @@ $purple  = '#9000FF'
 # Keygroups
 #   Used to identify the different colored areas of the keyboard
 #############################################################################
-$kg = {}
-require_relative 'seedFiles/seedKeyGroups'
+
+load File.expand_path('../seedFiles/seedKeyGroups.rb', __FILE__)
 
 #############################################################################
 # Keycodes
@@ -30,8 +25,8 @@ require_relative 'seedFiles/seedKeyGroups'
 #   Keycodes are then Mapped to actions or characters
 #############################################################################
 
-$kc = {}
-require_relative 'seedFiles/seedKeyCodes'
+
+load File.expand_path('../seedFiles/seedKeyCodes.rb', __FILE__)
 # Blank Keycodes : these keycodes do not have default Linux actions mapped to them
 
 
@@ -39,8 +34,8 @@ require_relative 'seedFiles/seedKeyCodes'
 # Keyblocks
 #   A grouping of keys by block, to allow easier formatting
 #############################################################################
-$kb = {}
-require_relative 'seedFiles/seedKeyBlocks'
+
+load File.expand_path('../seedFiles/seedKeyBlocks.rb', __FILE__)
 
 
-require_relative 'seedFiles/seedKeys'
+load File.expand_path('../seedFiles/seedKeys.rb', __FILE__)

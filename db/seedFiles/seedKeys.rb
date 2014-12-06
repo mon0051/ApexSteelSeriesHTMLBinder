@@ -1,3 +1,4 @@
+require_relative 'seed_globals'
 #############################################################################
 # Keys
 #   This Section represents the physical keys as they appear on the keyboard
@@ -149,6 +150,7 @@ Key.create({name:'LEFT'      , scancode: '00000', keygroup_id: $kg[:right].id, k
 Key.create({name:'DOWN'      , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Arrows].id})
 Key.create({name:'RIGHT'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Arrows].id})
 # Function Keys
+
 Key.create({name: 'F1'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 0*$sf      , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
 Key.create({name: 'F2'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 10*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
 Key.create({name: 'F3'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 20*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})

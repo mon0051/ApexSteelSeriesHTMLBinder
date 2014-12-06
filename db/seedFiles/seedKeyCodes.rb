@@ -1,9 +1,9 @@
+require_relative 'seed_globals'
 #############################################################################
 # Keycodes
 #   Linux maps the raw scancodes of keys into keycodes
 #   Keycodes are then Mapped to actions or characters
 #############################################################################
-$kc = {}
 $kc[:k179]=Keycode.create({code: '179', mapped_action: ''})
 $kc[:k180]=Keycode.create({code: '180', mapped_action: ''})
 $kc[:k181]=Keycode.create({code: '181', mapped_action: ''})

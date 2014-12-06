@@ -3,28 +3,52 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $key_size: 4.5rem;
 $double_key: 9.5rem;
-$key_font_size:1.5rem;
+$key_font_size:1.3rem;
 
 $normal_text_padding:$key_size / 2.0 - $key_font_size / 2.0;
 $two_line_text_padding:$key_size / 4.0 - $key_font_size / 2.0;
 $keyboard_wrapper_background:#1e1e1e;
 $keyboard_background:#232323;
 $key_background:#2e2e2e;
+$key_border_color: #555;
 
 .key{
-  border: solid 0.1rem #555;
+  border: solid 0.1rem $key_border_color;
   border-radius: 0.3rem;
   display: block;
   position: absolute;
   height:$key_size;
   width: $key_size;
   background-color:$key_background;
+  .key-text{
+    text-align: center;
+    font-size: $key_font_size;
+    height: 100%;
+    display: block;
+    form {
+      display: block;
+      height: 100%;
+      div {
+        display: block;
+        height: 100%;
+        input{
+          display: block;
+          height: 100%;
+          width:100%;
+          color:inherit;
+          background: rgba(0,0,0,0);
+          word-break: normal;
+          white-space: normal;
+          font-size: $key_font_size;
+          border:none;
+          -webkit-appearance: none;
+        }
+      }
+    }
+
+  }
 }
-.key-text{
-  text-align: center;
-  font-size: $key_font_size;
-  padding-top: $normal_text_padding;
-}
+
 .head_part{
   position: relative;
 }
@@ -80,9 +104,6 @@ $ctrl_size:6.95rem;
 }
 .Escape {
   height:$double_key;
-}
-.TwoLine .key-text {
-  padding-top: $two_line_text_padding;
 }
 .NumPlus,.NumEnter,.Play {
   height:$double_key;
