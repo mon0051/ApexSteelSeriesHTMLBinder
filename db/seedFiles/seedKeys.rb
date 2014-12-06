@@ -2,7 +2,11 @@
 # Keys
 #   This Section represents the physical keys as they appear on the keyboard
 #   The data here will be used to display the keys, and also save what
-#   keycodes are mapped to them
+#   keycodes are mapped to them. The x_pos and y_pos are used to position
+#   the keys on the keyboard, relative to the keyblock it's attached to.
+#   I chose to add the keys in blocks because it reduces the amount of
+#   maths i had to do in my head to make all the keys align properly.
+#   A standard key has a width and height of 10 * sf (Scale Factor)
 #############################################################################
 # MX Keys
 
@@ -37,12 +41,12 @@ Key.create({name: 'L4', scancode: '700ab', keygroup_id: $kg[:left].id, keycode1:
 # Sound Keys
 Key.create({name: 'V+'  , scancode: 'c00e9' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 0*$sf , keyblock_id: $kb[:MediaKeys1].id})
 Key.create({name: 'V-'  , scancode: 'c00e9' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 10*$sf , keyblock_id: $kb[:MediaKeys1].id})
-Key.create({name: 'Mute', scancode: 'c00e2' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 20*$sf , keyblock_id: $kb[:MediaKeys1].id})
-Key.create({name: 'Prev', scancode: 'c00b6' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 30*$sf , keyblock_id: $kb[:MediaKeys1].id})
-Key.create({name: 'Next', scancode: 'c00b5' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 40*$sf , keyblock_id: $kb[:MediaKeys1].id})
-Key.create({name:'Pause', scancode: 'c00cd' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 50*$sf , keyblock_id: $kb[:MediaKeys1].id})
+Key.create({name: 'Mute', scancode: 'c00e2' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 0*$sf , keyblock_id: $kb[:MediaKeys2].id})
+Key.create({name: 'Prev', scancode: 'c00b6' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 10*$sf , keyblock_id: $kb[:MediaKeys2].id})
+Key.create({name: 'Next', scancode: 'c00b5' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 20*$sf , keyblock_id: $kb[:MediaKeys2].id})
+Key.create({name:'Play Pause', scancode: 'c00cd' , keygroup_id: $kg[:right].id, keycode1: $kc[:k123].id, x_pos: 0*$sf  , y_pos: 30*$sf , keyblock_id: $kb[:MediaKeys2].id,eclass:'Play'})
 # Regular Keys
-Key.create({name: 'Escape', scancode: '00000', keygroup_id: $kg[:top].id   , keycode1: $kc[:k999], x_pos: 0*$sf   , y_pos: 0*$sf  , keyblock_id: $kb[:Esc].id,eclass:'Escape'})
+Key.create({name: 'Esc', scancode: '00000', keygroup_id: $kg[:top].id   , keycode1: $kc[:k999], x_pos: 0*$sf   , y_pos: 0*$sf  , keyblock_id: $kb[:Esc].id,eclass:'Escape'})
 # Qwerty Numbers
 Key.create({name: '~'     , scancode: '00000', keygroup_id: $kg[:bottom].id, keycode1: $kc[:k999], x_pos: 0*$sf   , y_pos: 0*$sf  , keyblock_id: $kb[:QwertyNo].id})
 Key.create({name: '1'     , scancode: '00000', keygroup_id: $kg[:bottom].id, keycode1: $kc[:k999], x_pos: 10*$sf  , y_pos: 0*$sf  , keyblock_id: $kb[:QwertyNo].id})
@@ -110,14 +114,14 @@ Key.create({name:'Apex'   , scancode: '00000', keygroup_id: $kg[:bottom].id, key
 Key.create({name:'List'   , scancode: '00000', keygroup_id: $kg[:bottom].id, keycode1: $kc[:k999], x_pos: 127*$sf , y_pos: 0*$sf , keyblock_id: $kb[:QwertyFunc].id,eclass: 'ListKey'})
 Key.create({name:'RCtrl'  , scancode: '00000', keygroup_id: $kg[:bottom].id, keycode1: $kc[:k999], x_pos: 137*$sf , y_pos: 0*$sf , keyblock_id: $kb[:QwertyFunc].id,eclass: 'Ctrl'})
 # PrnScn Area
-Key.create({name:'PrtScn' , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf  , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id})
-Key.create({name:'SclLock', scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id})
-Key.create({name:'Pause'  , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id})
+Key.create({name:'PRT SCN'   , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf  , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id,eclass:'TwoLine'})
+Key.create({name:'SCRL LOCK' , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id,eclass:'TwoLine'})
+Key.create({name:'PAUSE'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 0*$sf , keyblock_id: $kb[:PrtScr].id})
 # NumPad
-Key.create({name:'Num Lock'  , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf , y_pos: 0*$sf , keyblock_id: $kb[:NumPad].id,eclass:'NumLock'})
-Key.create({name:'/'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 0*$sf , keyblock_id: $kb[:NumPad].id})
-Key.create({name:'*'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 0*$sf , keyblock_id: $kb[:NumPad].id})
-Key.create({name:'-'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 30*$sf , y_pos: 0*$sf , keyblock_id: $kb[:NumPad].id})
+Key.create({name:'NUM LOCK'  , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf  , y_pos: 0*$sf  , keyblock_id: $kb[:NumPad].id,eclass:'TwoLine'})
+Key.create({name:'/'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 0*$sf  , keyblock_id: $kb[:NumPad].id})
+Key.create({name:'*'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 0*$sf  , keyblock_id: $kb[:NumPad].id})
+Key.create({name:'-'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 30*$sf , y_pos: 0*$sf  , keyblock_id: $kb[:NumPad].id})
 Key.create({name:'7'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 00*$sf , y_pos: 10*$sf , keyblock_id: $kb[:NumPad].id})
 Key.create({name:'8'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 10*$sf , keyblock_id: $kb[:NumPad].id})
 Key.create({name:'9'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 10*$sf , keyblock_id: $kb[:NumPad].id})
@@ -131,4 +135,33 @@ Key.create({name:'3'         , scancode: '00000', keygroup_id: $kg[:right].id, k
 Key.create({name:'Enter'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 30*$sf , y_pos: 30*$sf , keyblock_id: $kb[:NumPad].id,eclass:'NumEnter'})
 Key.create({name:'0'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 00*$sf , y_pos: 40*$sf , keyblock_id: $kb[:NumPad].id,eclass:'Num0'})
 Key.create({name:'.'         , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 40*$sf , keyblock_id: $kb[:NumPad].id})
+# Ins Area
+Key.create({name:'INS'       , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf  , y_pos: 0*$sf  , keyblock_id: $kb[:Ins].id})
+Key.create({name:'HOME'      , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 0*$sf  , keyblock_id: $kb[:Ins].id})
+Key.create({name:'PG UP'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 0*$sf  , keyblock_id: $kb[:Ins].id})
+Key.create({name:'DEL'       , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 00*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Ins].id})
+Key.create({name:'END'       , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Ins].id})
+Key.create({name:'PG DN'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Ins].id})
+# Arrows
+Key.create({name:'UP LEFT'   , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 0*$sf  , y_pos:  0*$sf , keyblock_id: $kb[:Arrows].id,eclass:'TwoLine'})
+Key.create({name:'UP'        , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos:  0*$sf , keyblock_id: $kb[:Arrows].id})
+Key.create({name:'UP RIGHT'  , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos:  0*$sf , keyblock_id: $kb[:Arrows].id,eclass:'TwoLine'})
+Key.create({name:'LEFT'      , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos:  0*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Arrows].id})
+Key.create({name:'DOWN'      , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 10*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Arrows].id})
+Key.create({name:'RIGHT'     , scancode: '00000', keygroup_id: $kg[:right].id, keycode1: $kc[:k999], x_pos: 20*$sf , y_pos: 10*$sf , keyblock_id: $kb[:Arrows].id})
+# Function Keys
+Key.create({name: 'F1'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 0*$sf      , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
+Key.create({name: 'F2'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 10*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
+Key.create({name: 'F3'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 20*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
+Key.create({name: 'F4'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 30*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys1].id})
+
+Key.create({name: 'F5'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 0*$sf      , y_pos: 10*$sf , keyblock_id: $kb[:MKeys2].id})
+Key.create({name: 'F6'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 10*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys2].id})
+Key.create({name: 'F7'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 20*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys2].id})
+Key.create({name: 'F8'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 30*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys2].id})
+
+Key.create({name: 'F9'  , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 0*$sf      , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
+Key.create({name: 'F10' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 10*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
+Key.create({name: 'F11' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 20*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
+Key.create({name: 'F12' , scancode: '00000', keygroup_id: $kg[:top].id, keycode1: $kc[:k189].id, x_pos: 30*$sf     , y_pos: 10*$sf , keyblock_id: $kb[:MKeys3].id})
 

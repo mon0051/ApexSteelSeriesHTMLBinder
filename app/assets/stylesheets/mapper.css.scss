@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $key_size: 4.5rem;
-
+$double_key: 9.5rem;
 $key_font_size:1.5rem;
+
+$normal_text_padding:$key_size / 2.0 - $key_font_size / 2.0;
+$two_line_text_padding:$key_size / 4.0 - $key_font_size / 2.0;
 $keyboard_wrapper_background:#1e1e1e;
 $keyboard_background:#232323;
 $key_background:#2e2e2e;
@@ -20,7 +23,7 @@ $key_background:#2e2e2e;
 .key-text{
   text-align: center;
   font-size: $key_font_size;
-  padding-top: $key_size / 2.0 - $key_font_size / 2.0;
+  padding-top: $normal_text_padding;
 }
 .head_part{
   position: relative;
@@ -70,11 +73,20 @@ $ctrl_size:6.95rem;
   color:rgba(0,0,0,0);
 }
 .Backspace {
-  width:9.5rem;
+  width:$double_key;
 }
 .RShift {
   width:13.5rem;
 }
-#Escape {
-  height:9.5rem;
+.Escape {
+  height:$double_key;
+}
+.TwoLine .key-text {
+  padding-top: $two_line_text_padding;
+}
+.NumPlus,.NumEnter,.Play {
+  height:$double_key;
+}
+.Num0 {
+  width:$double_key;
 }
